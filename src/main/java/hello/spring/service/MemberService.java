@@ -2,13 +2,12 @@ package hello.spring.service;
 
 import hello.spring.domain.Member;
 import hello.spring.repository.MemberRepository;
-import hello.spring.repository.MemoryMemberRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Transactional   //data 저장 변경할 때 transaction 필요
 public class MemberService {
 //service는 repository보다 비즈니스에 좀 더 연관된 이름을 지어야
     private final MemberRepository memberRepository;//repository 가져오기
